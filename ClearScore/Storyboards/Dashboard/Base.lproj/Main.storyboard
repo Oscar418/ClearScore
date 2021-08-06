@@ -33,7 +33,7 @@
         <!--Dashboard-->
         <scene sceneID="9rE-Rm-0Ak">
             <objects>
-                <viewController id="PLz-8p-h5N" customClass="ViewController" customModule="ClearScore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="PLz-8p-h5N" customClass="ViewController" customModule="ClearScore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b56-2C-UHZ" customClass="HomeView" customModule="ClearScore" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
                         </constraints>
                         <connections>
                             <outlet property="activityIndicator" destination="BvQ-UI-Igx" id="tqP-Lr-gRj"/>
-                            <outlet property="scoreLabel" destination="eTx-ii-fB9" id="QB2-W1-x50"/>
+                            <outlet property="scoreLabel" destination="eTx-ii-fB9" id="wIl-f2-9bN"/>
                             <outlet property="totalScoreLabel" destination="RfA-ti-le1" id="yWW-CB-utJ"/>
                         </connections>
                     </view>

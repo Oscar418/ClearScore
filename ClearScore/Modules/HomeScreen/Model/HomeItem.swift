@@ -8,6 +8,5 @@
 import Foundation
 
 struct HomeItem: Decodable {
-    let accountIDVStatus: String?
     let creditReportInfo: creditReportInfo?
 }

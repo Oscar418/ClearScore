@@ -11,7 +11,7 @@
         <!--Details-->
         <scene sceneID="EWB-eN-Oh3">
             <objects>
-                <viewController id="F1v-4x-k55" customClass="DetailsViewController" customModule="ClearScore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="F1v-4x-k55" customClass="DetailsViewController" customModule="ClearScore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9PA-6b-bmc" customClass="DetailsView" customModule="MVC_IN_ACTION" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
