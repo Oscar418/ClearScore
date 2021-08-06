@@ -11,7 +11,7 @@ protocol HomeViewInput: AnyObject {
     var itemAction: (() -> Void)? { get set }
     func activity(_ show: Bool)
     func display(_ items: HomeItem)
-    func drawCircle(_ view: UIView, score: Int)
+    func drawCircle(_ view: UIView, score: Int, maxScore: Int)
     func drawBaseCircle(_ view: UIView)
 }
 
@@ -48,10 +48,10 @@ extension HomeView: HomeViewInput {
         view.layer.addSublayer(shapeLayer)
     }
     
-    func drawCircle(_ view: UIView, score: Int) {
+    func drawCircle(_ view: UIView, score: Int, maxScore: Int) {
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
-        let scoreConverted = Double(score)/Double(700)
+        let scoreConverted = Double(score)/Double(maxScore)
         let circleStokeEnd = scoreConverted * Double.pi * 2
         CATransaction.begin()
         let layer : CAShapeLayer = CAShapeLayer()

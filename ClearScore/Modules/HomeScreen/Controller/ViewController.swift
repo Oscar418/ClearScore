@@ -33,7 +33,7 @@ extension ViewController: HomeModelOutput {
     func modelDidLoad(_ items: HomeItem) {
         contentView.activity(false)
         contentView.display(items)
-        contentView.drawCircle(view, score: items.creditReportInfo?.score ?? 0)
+        contentView.drawCircle(view, score: items.creditReportInfo?.score ?? 0, maxScore: items.creditReportInfo?.maxScoreValue ?? 0)
         contentView.itemAction = { [unowned self] in
             self.performSegue(withIdentifier: "showDetails", sender: items)
         }
