@@ -8,7 +8,6 @@
 import UIKit
 
 final class DetailsViewController: UIViewController {
-
     var model: DetailsModelInput!
     lazy var contentView: DetailsViewInput = { return view as! DetailsViewInput }()
     
