@@ -7,12 +7,9 @@
 
 import UIKit
 
-protocol DetailsViewInput: AnyObject, HomeItemViewType {
-    
-}
+protocol DetailsViewInput: AnyObject, HomeItemViewType {}
 
 final class ViewController: UIViewController {
-    
     var model: HomeModelInput!
     lazy var contentView: HomeViewInput = { return view as! HomeViewInput }()
 

@@ -40,12 +40,19 @@ extension HomeView: HomeViewInput {
     func drawCircle(_ view: UIView) {
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
+        CATransaction.begin()
+        let layer : CAShapeLayer = CAShapeLayer()
+        layer.strokeColor = UIColor.black.cgColor
+        layer.lineWidth = 1.0
+        layer.fillColor = UIColor.clear.cgColor
         let circlePath = UIBezierPath(arcCenter: CGPoint(x: width/2, y: height/2), radius: CGFloat(125), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = circlePath.cgPath
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.black.cgColor
-        shapeLayer.lineWidth = 1.0
-        view.layer.addSublayer(shapeLayer)
+        layer.path = circlePath.cgPath
+        let animation : CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = 0.0
+        animation.toValue = 1.0
+        animation.duration = 2.0
+        layer.add(animation, forKey: "customStroke")
+        CATransaction.commit()
+        view.layer.addSublayer(layer)
     }
 }
