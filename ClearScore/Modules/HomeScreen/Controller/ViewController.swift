@@ -16,7 +16,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         contentView.activity(true)
-        contentView.drawCircle(view)
+        contentView.drawBaseCircle(view)
         model.load()
     }
     
@@ -33,6 +33,7 @@ extension ViewController: HomeModelOutput {
     func modelDidLoad(_ items: HomeItem) {
         contentView.activity(false)
         contentView.display(items)
+        contentView.drawCircle(view, score: items.creditReportInfo?.score ?? 0)
         contentView.itemAction = { [unowned self] in
             self.performSegue(withIdentifier: "showDetails", sender: items)
         }

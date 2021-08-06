@@ -11,7 +11,8 @@ protocol HomeViewInput: AnyObject {
     var itemAction: (() -> Void)? { get set }
     func activity(_ show: Bool)
     func display(_ items: HomeItem)
-    func drawCircle(_ view: UIView)
+    func drawCircle(_ view: UIView, score: Int)
+    func drawBaseCircle(_ view: UIView)
 }
 
 final class HomeView: UIView {
@@ -37,15 +38,27 @@ extension HomeView: HomeViewInput {
         totalScoreLabel.text = "out of \(totalScoreText)"
     }
     
-    func drawCircle(_ view: UIView) {
+    func drawBaseCircle(_ view: UIView) {
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: width/2, y: height/2), radius: CGFloat(125), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = circlePath.cgPath
+        shapeLayer.fillColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.0300).cgColor
+        view.layer.addSublayer(shapeLayer)
+    }
+    
+    func drawCircle(_ view: UIView, score: Int) {
+        let width = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height
+        let scoreConverted = Double(score)/Double(700)
+        let circleStokeEnd = scoreConverted * Double.pi * 2
         CATransaction.begin()
         let layer : CAShapeLayer = CAShapeLayer()
         layer.strokeColor = UIColor.black.cgColor
         layer.lineWidth = 1.0
         layer.fillColor = UIColor.clear.cgColor
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: width/2, y: height/2), radius: CGFloat(125), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: width/2, y: height/2), radius: CGFloat(125), startAngle: CGFloat(0), endAngle: CGFloat(circleStokeEnd), clockwise: true)
         layer.path = circlePath.cgPath
         let animation : CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = 0.0
