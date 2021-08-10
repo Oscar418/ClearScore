@@ -8,14 +8,14 @@
 import Foundation
 
 enum HomeModelError: Error {
-    case unreachable
+    case invalidLink
 }
 
 extension HomeModelError: LocalizedError {
     var errorDescription: String? {
         switch self {
-        case .unreachable:
-            return "Couldn't load data"
+        case .invalidLink:
+            return "Something is wrong with the link"
         }
     }
 }
@@ -25,7 +25,7 @@ final class HomeModel: HomeModelInput {
     
     func load() {
         guard let url = URL(string: "https://5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod/mockcredit/values") else {
-            output.modelDidFail(HomeModelError.unreachable)
+            output.modelDidFail(HomeModelError.invalidLink)
             return
         }
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
