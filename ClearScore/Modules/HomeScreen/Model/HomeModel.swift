@@ -28,20 +28,17 @@ final class HomeModel: HomeModelInput {
             output.modelDidFail(HomeModelError.invalidLink)
             return
         }
-        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-            do {
-                guard let jsonData = data else { return }
-                let decoder = JSONDecoder()
-                let items = try decoder.decode(HomeItem.self, from: jsonData)
-                DispatchQueue.main.async {
-                    self.output.modelDidLoad(items)
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    self.output.modelDidFail(error)
-                }
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            let items = try decoder.decode(HomeItem.self, from: data)
+            DispatchQueue.main.async {
+                self.output.modelDidLoad(items)
             }
-        })
-        task.resume()
+        } catch {
+            DispatchQueue.main.async {
+                self.output.modelDidFail(error)
+            }
+        }
     }
 }
