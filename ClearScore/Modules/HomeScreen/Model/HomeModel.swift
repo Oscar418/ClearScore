@@ -32,13 +32,9 @@ final class HomeModel: HomeModelInput {
             let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
             let items = try decoder.decode(HomeItem.self, from: data)
-            DispatchQueue.main.async {
-                self.output.modelDidLoad(items)
-            }
+            self.output.modelDidLoad(items)
         } catch {
-            DispatchQueue.main.async {
-                self.output.modelDidFail(error)
-            }
+            self.output.modelDidFail(error)
         }
     }
 }
