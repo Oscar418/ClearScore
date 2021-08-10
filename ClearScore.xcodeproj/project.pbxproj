@@ -36,7 +36,7 @@
 		2A6802CB26BCAE8F00EF4E09 /* DetailsModuleInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6802CA26BCAE8F00EF4E09 /* DetailsModuleInitializer.swift */; };
 		2A6802CD26BCBF4C00EF4E09 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6802CC26BCBF4C00EF4E09 /* Currency.swift */; };
 		2A6802CF26BCC19200EF4E09 /* DetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A6802CE26BCC19200EF4E09 /* DetailsStoryboard.storyboard */; };
-		2A6802D226BD2D3700EF4E09 /* creditDataMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A6802D126BD2D3700EF4E09 /* creditDataMock.json */; };
+		2A6E2A6F26C2A44A007D840D /* creditDataMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A6E2A6E26C2A44A007D840D /* creditDataMock.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +92,7 @@
 		2A6802CA26BCAE8F00EF4E09 /* DetailsModuleInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModuleInitializer.swift; sourceTree = "<group>"; };
 		2A6802CC26BCBF4C00EF4E09 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		2A6802CE26BCC19200EF4E09 /* DetailsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsStoryboard.storyboard; sourceTree = "<group>"; };
-		2A6802D126BD2D3700EF4E09 /* creditDataMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = creditDataMock.json; sourceTree = "<group>"; };
+		2A6E2A6E26C2A44A007D840D /* creditDataMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = creditDataMock.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,7 +309,7 @@
 		2A6802D026BD2CA900EF4E09 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2A6802D126BD2D3700EF4E09 /* creditDataMock.json */,
+				2A6E2A6E26C2A44A007D840D /* creditDataMock.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -441,7 +441,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A6802D226BD2D3700EF4E09 /* creditDataMock.json in Resources */,
+				2A6E2A6F26C2A44A007D840D /* creditDataMock.json in Resources */,
 				2A68025B26BC163600EF4E09 /* LaunchScreen.storyboard in Resources */,
 				2A68025826BC163600EF4E09 /* Assets.xcassets in Resources */,
 				2A6802CF26BCC19200EF4E09 /* DetailsStoryboard.storyboard in Resources */,
